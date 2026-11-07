@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
+/* ================================
+   Light Theme
+================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  --background: #faf9f6;
+  --foreground: #252526;
+
+  --card: #ffffff;
+  --card-foreground: #252526;
+
+  /* NextBuy Brand Orange */
+  --primary: #fc6900;
+  --primary-foreground: #ffffff;
+
+  /* Primary Orange - Soft Backgrounds */
+  --primary-soft: #fff0e6;
+  --primary-soft-hover: #ffe5d3;
+  --primary-soft-border: #ffd0b3;
+  --primary-soft-foreground: #c95000;
+
+  --secondary: #f0ede7;
+  --secondary-foreground: #252526;
+
+  --muted: #f0ede7;
+  --muted-foreground: #737373;
+
+  --border: #e7e2d9;
+  --input: #e7e2d9;
+  --ring: #fc6900;
 }
 
+/* ================================
+   Dark Theme
+================================ */
+.dark {
+  color-scheme: dark;
+
+  --background: #171717;
+  --foreground: #f5f1e8;
+
+  --card: #222222;
+  --card-foreground: #f5f1e8;
+
+  /* NextBuy Brand Orange */
+  --primary: #fc6900;
+  --primary-foreground: #ffffff;
+
+  /* Primary Orange - Soft Backgrounds */
+  --primary-soft: #fc690018;
+  --primary-soft-hover: #fc690028;
+  --primary-soft-border: #fc690050;
+  --primary-soft-foreground: #ff914d;
+
+  --secondary: #2b2b2b;
+  --secondary-foreground: #f5f1e8;
+
+  --muted: #2b2b2b;
+  --muted-foreground: #a3a3a3;
+
+  --border: #383838;
+  --input: #383838;
+  --ring: #fc6900;
+}
+
+/* ================================
+   Tailwind CSS Theme Variables
+================================ */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  /* New Primary Soft Utilities */
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-soft-hover: var(--primary-soft-hover);
+  --color-primary-soft-border: var(--primary-soft-border);
+  --color-primary-soft-foreground: var(--primary-soft-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ================================
+   Global Styles
+================================ */
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
 }
