@@ -26,8 +26,8 @@ export default function Navbar() {
 
     const logo =
         mounted && resolvedTheme === "dark"
-            ? "/images/dark-NextBuy.png"
-            : "/images/lightNextbuyLogo.png";
+            ? "/images/darkPanjabi2.png"
+            : "/images/lightPanjabi.png";
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-md">
@@ -40,14 +40,14 @@ export default function Navbar() {
                     className="shrink-0"
                     onClick={() => setMenuOpen(false)}
                 >
-                    <div className="relative h-14 w-36 overflow-hidden rounded-md bg-background sm:w-40">
+                    <div className="relative h-14 w-36 overflow-hidden">
                         <Image
                             src={logo}
-                            alt="NextBuy"
+                            alt="Panjabi Eshop BD"
                             fill
                             priority
-                            sizes="160px"
-                            className="object-cover"
+                            sizes="144px"
+                            className="object-contain"
                         />
                     </div>
                 </Link>

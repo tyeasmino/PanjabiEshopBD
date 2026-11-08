@@ -351,13 +351,15 @@ export default function CartPage() {
                                         </p>
                                     </div>
 
-                                    <button
-                                        disabled
-                                        className="flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-full bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground opacity-60"
+
+                                    <Link
+                                        href="/checkout"
+                                        className="flex w-full items-center justify-center gap-3 rounded-full bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:opacity-90"
                                     >
                                         Proceed to Checkout
                                         <ArrowRight size={17} />
-                                    </button>
+                                    </Link>
+
 
                                     <p className="text-center text-[11px] text-muted-foreground">
                                         Checkout will be available soon.

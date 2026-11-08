@@ -3,12 +3,10 @@
 
 import FeaturedProducts from "@/components/home/featured-products";
 import HeroSection from "@/components/home/hero-section";
-import Navbar from "@/components/layout/navbar";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-background text-foreground transition-colors duration-300">
-
 
       {/* Main Content */}
       <section className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-5 py-16 sm:px-8">
