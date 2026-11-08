@@ -93,7 +93,7 @@ export default function AboutPage() {
                         <div className="absolute -right-5 -top-5 h-32 w-32 rounded-full bg-primary/10 blur-3xl" />
 
                         <div className="relative overflow-hidden rounded-2xl border border-border bg-secondary p-2">
-                            <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
+                            <div className="relative aspect-4/5 overflow-hidden rounded-xl">
                                 <Image
                                     src="/images/hero-panjabi.png"
                                     alt="Panjabi Eshop BD fashion collection"

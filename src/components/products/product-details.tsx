@@ -84,7 +84,7 @@ export default function ProductDetails({
                         Products
                     </Link>
                     <span>/</span>
-                    <span className="max-w-[180px] truncate text-foreground">
+                    <span className="max-w-45 truncate text-foreground">
                         {product.name}
                     </span>
                 </nav>
@@ -97,7 +97,7 @@ export default function ProductDetails({
                     {/* Product Image */}
                     <div className="min-w-0">
                         <div className="relative overflow-hidden rounded-2xl border border-border bg-secondary/40">
-                            <div className="relative aspect-[4/5] w-full">
+                            <div className="relative aspect-4/5 w-full">
                                 <Image
                                     src={product.image}
                                     alt={product.name}

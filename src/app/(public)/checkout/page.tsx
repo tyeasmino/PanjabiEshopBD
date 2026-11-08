@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 type CartItem = {
@@ -32,6 +33,7 @@ const formatPrice = (price: number) =>
     `৳${price.toLocaleString("en-BD")}`;
 
 export default function CheckoutPage() {
+    const router = useRouter();
     const [cart, setCart] = useState<CartItem[]>([]);
     const [mounted, setMounted] = useState(false);
 
@@ -88,7 +90,61 @@ export default function CheckoutPage() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        alert("Checkout UI is ready. Order placement will be connected later.");
+        if (cart.length === 0) return;
+
+        const orderId = `NB-${Date.now()}`;
+
+        const newOrder = {
+            id: orderId,
+            date: new Date().toISOString(),
+            status: "Processing",
+            paymentMethod:
+                paymentMethod === "cod" ? "Cash on Delivery" : paymentMethod,
+
+            customer: {
+                name: form.fullName,
+                phone: form.phone,
+                email: form.email,
+                district: form.district,
+                area: form.area,
+                address: form.address,
+                note: form.note,
+            },
+
+            items: cart,
+
+            subtotal,
+            deliveryCharge,
+            total,
+        };
+
+        try {
+            const savedOrders = JSON.parse(
+                localStorage.getItem("nextbuy-orders") || "[]"
+            );
+
+            const updatedOrders = [newOrder, ...savedOrders];
+
+            localStorage.setItem(
+                "nextbuy-orders",
+                JSON.stringify(updatedOrders)
+            );
+
+            localStorage.setItem(
+                "nextbuy-latest-order",
+                JSON.stringify(newOrder)
+            );
+
+            localStorage.removeItem("nextbuy-cart");
+
+            window.dispatchEvent(
+                new Event("nextbuy-cart-updated")
+            );
+
+            router.push("/order-success");
+        } catch {
+            alert("Unable to place your order. Please try again.");
+        }
     };
 
     if (!mounted) {

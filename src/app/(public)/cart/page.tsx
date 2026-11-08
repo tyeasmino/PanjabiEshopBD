@@ -133,7 +133,7 @@ export default function CartPage() {
 
                 {cart.length === 0 ? (
                     /* Empty Cart */
-                    <div className="mx-auto flex min-h-[430px] max-w-xl flex-col items-center justify-center py-16 text-center">
+                    <div className="mx-auto flex min-h-107.5 max-w-xl flex-col items-center justify-center py-16 text-center">
                         <div className="relative mb-8 flex h-28 w-28 items-center justify-center rounded-full border border-border bg-card">
                             <ShoppingBag
                                 size={42}
@@ -213,7 +213,7 @@ export default function CartPage() {
                                             {/* Product Image */}
                                             <Link
                                                 href={`/products/${item.productId}`}
-                                                className="relative h-[76px] w-[76px] shrink-0 overflow-hidden rounded-lg bg-secondary"
+                                                className="relative h-19 w-19 shrink-0 overflow-hidden rounded-lg bg-secondary"
                                             >
                                                 <Image
                                                     src={item.image}
@@ -243,7 +243,7 @@ export default function CartPage() {
                                             </div>
 
                                             {/* Quantity */}
-                                            <div className="flex w-[100px] shrink-0 flex-col items-center gap-2">
+                                            <div className="flex w-25 shrink-0 flex-col items-center gap-2">
                                                 <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
                                                     Quantity
                                                 </span>
@@ -278,7 +278,7 @@ export default function CartPage() {
                                             </div>
 
                                             {/* Subtotal */}
-                                            <div className="w-[105px] shrink-0 text-right">
+                                            <div className="w-26.25 shrink-0 text-right">
                                                 <p className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
                                                     Subtotal
                                                 </p>

@@ -28,7 +28,7 @@ export default function ProductCard({
         <article className="group min-w-0">
             <Link href={`/products/${id}`} className="block">
                 {/* Image Stage */}
-                <div className="relative isolate aspect-[3/4] overflow-hidden rounded-2xl bg-[#1d1d1d]">
+                <div className="relative isolate aspect-3/4 overflow-hidden rounded-2xl bg-[#1d1d1d]">
 
                     {/* Background Decoration */}
                     <div className="absolute -right-16 -top-16 h-52 w-52 rounded-full border border-white/[0.07] transition-transform duration-700 group-hover:scale-125" />
